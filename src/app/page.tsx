@@ -1,10 +1,20 @@
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <div className="justify-center items-center">
-      <div className="flex justify-center items-center">
-      <h1 className="text-red-500">Hello my project</h1>
-      </div>
+          <SignedOut>
+            <SignInButton mode="modal">
+              <button className="bg-red-500 p-3 rounded-lg" >
+                  Sign in
+              </button>
+            </SignInButton>  
+          </SignedOut>
+
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
       
     </div>
   );
