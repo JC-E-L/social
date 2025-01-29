@@ -1,21 +1,26 @@
+import ModeToggler from "@/components/ModeToggler";
+import { Button } from "@/components/ui/button";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="justify-center items-center">
+    <div className="m-4 flex">
           <SignedOut>
             <SignInButton mode="modal">
-              <button className="bg-red-500 p-3 rounded-lg" >
-                  Sign in
-              </button>
+              
+              <Button>
+                Sign in
+              </Button>
             </SignInButton>  
           </SignedOut>
 
           <SignedIn>
             <UserButton />
           </SignedIn>
-      
+
+        <Button variant="secondary">Click me</Button>
+        <ModeToggler/>
     </div>
   );
 }
