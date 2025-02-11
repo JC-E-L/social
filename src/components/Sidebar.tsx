@@ -13,7 +13,6 @@ import Link from 'next/link';
 export default async function Sidebar() {
     const authUser = await currentUser();
     if(!authUser) return <UnAuthenticatedSidebar/>
-
     const user = await getUserByClerkId(authUser.id);
     if(!user) return null
 
